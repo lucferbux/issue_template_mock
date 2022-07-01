@@ -71,8 +71,8 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
-     validations:
-      required: false
+   validations:
+    required: false
   - type: opendatahub-version
     id: opendatahub-version
     attributes:
