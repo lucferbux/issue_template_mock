@@ -17,29 +17,34 @@ body:
       placeholder: ex. email@example.com
     validations:
       required: false
-  - type: textarea
-    id: describe-bug
+  - type: checkboxes
     attributes:
-      label: Describe the bug
-      description: A clear and concise description of what the bug is and how often it occurs
-      placeholder: Tell us what you see!
-      value: |
-          **Steps To Reproduce**
-          Steps to reproduce the behavior:
-          1. Go to '...'
-          2. Click on '....'
-          3. Scroll down to '....'
-          4. See error
-    validations:
-      required: true
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+      - label: I have searched the existing issues
+        required: true
   - type: textarea
-    id: expected-behavior
     attributes:
-      label: Expected behavior
-      description: A clear and concise description of what you expected to happen.
-      placeholder: Tell us what was the expected behavior!
+      label: Current Behavior
+      description: A concise description of what you're experiencing.
     validations:
-      required: true
+      required: false
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: A concise description of what you expected to happen.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Steps To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. In this environment...
+        2. With this config...
+        3. Run '...'
+        4. See error...
   - type: textarea
     id: workaround
     attributes:
