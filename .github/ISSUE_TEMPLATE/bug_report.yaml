@@ -1,14 +1,13 @@
 name: Bug Report
 description: File a bug report
 title: "[Bug]: "
-labels: ["bug", "triage"]
+labels: ["bug"]
 assignees:
-  - octocat
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for taking the time to fill out this bug report! Please, fill this form to help us improve the project.
   - type: input
     id: contact
     attributes:
@@ -18,24 +17,50 @@ body:
     validations:
       required: false
   - type: textarea
-    id: what-happened
+    id: describe-bug
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
+      label: Describe the bug
+      description: A clear and concise description of what the bug is and how often it occurs
       placeholder: Tell us what you see!
-      value: "A bug happened!"
+      value: |
+          **Steps To Reproduce**
+          Steps to reproduce the behavior:
+          1. Go to '...'
+          2. Click on '....'
+          3. Scroll down to '....'
+          4. See error
     validations:
       required: true
-  - type: dropdown
-    id: version
+  - type: textarea
+    id: expected-behavior
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+      placeholder: Tell us what was the expected behavior!
     validations:
       required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround (if any)
+      description: Any manual steps that allow you to resolve the issue
+      placeholder: Tell us the steps you followed to resolve the issue!
+    validations:
+      required: false
+  - type: dropdown
+    id: openshift-version
+    attributes:
+      label: Openshift Version
+      description: What version of Openshift are you running?
+      options:
+        - Baremetal
+        - OpenStack
+        - RHV
+        - AWS
+        - OKD
+        - CodeReady Containers
+    validations:
+      required: false
   - type: dropdown
     id: browsers
     attributes:
@@ -46,17 +71,18 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
+     validations:
+      required: false
+  - type: opendatahub-version
+    id: opendatahub-version
+    attributes:
+      label: Open Data Hub Version
+      description: Please attach relevant kfdef manifest if applicable
+      render: yaml
   - type: textarea
     id: logs
     attributes:
       label: Relevant log output
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+
